@@ -22,13 +22,11 @@
 echo "####################################"
 echo "#### Checking for updated files "
 echo "####################################"
-git pull 
 
 
 
 git add .
 sleep 3
-git status 
 
 echo "####################################################" 
 echo "##### Adding files to resprotory make your commit "
@@ -41,7 +39,7 @@ echo "####################################################"
 echo "######### Finishing up all done "
 echo "####################################################"
 
-git push
+git push -u origin master
 
 
 

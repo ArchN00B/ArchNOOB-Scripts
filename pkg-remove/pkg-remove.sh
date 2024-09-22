@@ -22,12 +22,13 @@
 installed_dir=$(dirname $(readlink -f $(basename `pwd`)))
 
 ###################################################################################################################################
-# RUN THIS COMMAND IN COMMAND LINE GET ALL PKG'S INSTALLED AND REMOVE THE ONES YOU DONT WANT IN PKG-REMOVE.TXT. THEN RUN SCRIPT   
-# sudo pacman -Q | sort > pkg-remove.txt     IT'S IN YOUR HANDS. YOU CAN ALSO TRY PACMAN -RSU TO GET RID OF DEPENDECIES
+# RUN THIS COMMAND FIRST sudo -S pacman -Q|cut -f 1 -d " " > pkg-remove.txt. REMOVE PKG'S YOU DONT WANT IN PKG-REMOVE.TXT.
+# THEN RUN SCRIPT. IT'S IN YOUR HANDS. YOU CAN ALSO TRY PACMAN -RSU TO GET RID OF DEPENDECIES
 ###################################################################################################################################
+
 file="pkg-remove.txt"
 
-for pkg in $(cat $file)
+for pkg in $(awk '{print $0}' $file)
 do
    if pacman -Rsn &> /dev/null; then
         tput setaf 1
@@ -41,7 +42,7 @@ do
         echo "#################################################################"
         echo "######### $pkg in pkg.txt is being removed. "
         echo "#################################################################"
-        sudo pacman -Rsn --noconfirm $pkg &> /dev/null
+        sudo pacman -Rsn --noconfirm $pkg 
         echo
         tput sgr0        
     fi
