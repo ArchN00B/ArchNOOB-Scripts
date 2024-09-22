@@ -22,7 +22,7 @@
 installed_dir=$(dirname $(readlink -f $(basename `pwd`)))
 
 ###################################################################################################################################
-# RUN THIS COMMAND FIRST sudo -S pacman -Q|cut -f 1 -d " " > pkg-remove.txt. REMOVE PKG'S YOU DONT WANT IN PKG-REMOVE.TXT.
+# RUN THIS COMMAND FIRST sudo pacman -Q|cut -f 1 -d " " > pkg-remove.txt. REMOVE PKG'S YOU DONT WANT IN PKG-REMOVE.TXT.
 # THEN RUN SCRIPT. IT'S IN YOUR HANDS. YOU CAN ALSO TRY PACMAN -RSU TO GET RID OF DEPENDECIES
 ###################################################################################################################################
 
