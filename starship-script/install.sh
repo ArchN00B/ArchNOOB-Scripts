@@ -2,20 +2,18 @@
 
 # install starship
 
-sudo pacman -S starship --noconfirm --needed 
+printf "%s\n" " Installing Starship."
+[ -f x86_64.txt ] && sudo pacman -S - < x86_64.txt --noconfirm --needed 
+
 # install Fira Nerd Font 
-wget -P font https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
-cd font 
-unzip FiraCode.zip 
-rm -r FiraCode.zip 
-sudo mv * /usr/share/fonts && cd .. && rm -r font
+wget -P FiraCode https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 
-file='star.txt'
-while read line; do
-echo $line >> ~/.bashrc
-done < $file 
+[ -f FiraCode/FiraCode.zip  ] && cd FiraCode
+unzip FiraCode.zip && rm -r FiraCode.zip 
+cd .. && sudo mv -vf FiraCode /usr/share/fonts/ 
+[ -f ~/.bashrc ] && cp  ~/.bashrc ~/.bashrc.bak."$(date +"%Y%m%d_%H%M%S")"
+[ -f ~/.bashrc ] && awk {print$1} starship.txt >> ~/.bashrc && source ~/.bashrc
+[ -f .config/starship.toml ] && cp -r .config/starship.toml ~/.config 
 
-source ~/.bashrc
-cp -r .config/starship.toml ~/.config/
 
  

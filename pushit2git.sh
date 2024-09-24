@@ -27,6 +27,7 @@ echo "####################################"
 
 git add .
 sleep 3
+git status 
 
 echo "####################################################" 
 echo "##### Adding files to resprotory make your commit "
