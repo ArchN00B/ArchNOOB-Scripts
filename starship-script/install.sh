@@ -12,7 +12,11 @@ wget -P FiraCode https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.
 unzip FiraCode.zip && rm -r FiraCode.zip 
 cd .. && sudo mv -vf FiraCode /usr/share/fonts/ 
 [ -f ~/.bashrc ] && cp  ~/.bashrc ~/.bashrc.bak."$(date +"%Y%m%d_%H%M%S")"
-[ -f ~/.bashrc ] && awk {print$1} starship.txt >> ~/.bashrc && source ~/.bashrc
+[ -f ~/.bashrc ] && \
+echo '
+#including starship
+eval "$(starship init bash)" ' >> ~/.bashrc && source ~/.bashrc
+
 [ -f .config/starship.toml ] && cp -r .config/starship.toml ~/.config 
 
 
