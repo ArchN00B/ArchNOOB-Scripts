@@ -54,7 +54,7 @@ printf "%s\n" "Enabling and configuring ${bold}SDDM ${normal}as the login manage
 [ -f "/usr/lib/sddm/sddm.conf.d/default.conf" ] && \
     sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf && \
     [ -d "/etc/sddm.conf.d/" ] || sudo mkdir -p /etc/sddm.conf.d/ && \
-    [ -f "/usr/lib/sddm/sddm.conf.d/archnoob-theme.conf" ] && \
+    [ -f "/usr/lib/sddm/sddm.conf.d/archnoobtheme.conf" ] && \
     sudo mv /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf /etc/sddm.conf.d/ && \
     sudo sed -i 's/^Current=*.*/Current=archnoobtheme/g' /etc/sddm.conf.d/archnoobtheme.conf
 
