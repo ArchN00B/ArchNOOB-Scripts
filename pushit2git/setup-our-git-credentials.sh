@@ -27,7 +27,7 @@ tput sgr0
 echo
 
 echo "################################################################################"
-echo "##### ADD YOUR PERSONAL TOKEN KEY ONCE FOR PASSWORD AND THATS THE LAST TIME" 
+echo "##### ADD YOUR PERSONAL TOKEN KEY ONCE FOR PASSWORD" 
 echo "################################################################################"
 
 # VARIBALES 
