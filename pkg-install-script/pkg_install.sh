@@ -20,9 +20,9 @@
 installed_dir=$(dirname $(readlink -f $(basename `pwd`)))
 ##################################################################################################################
 
-file="install.txt"
+file="pkg-install.txt"
 
-for pkg in $(cat $file)
+for pkg in $(awk '{print $1}' $file)
 do
 	if pacman -Qi $pkg &> /dev/null; then
         tput setaf 1
