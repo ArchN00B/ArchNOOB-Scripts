@@ -20,21 +20,21 @@
 installed_dir=$(dirname $(readlink -f $(basename `pwd`)))
 ##################################################################################################################
 
-file="pkg-install.txt"
+file="x86_64.txt"
 
 for pkg in $(awk '{print $1}' $file)
 do
 	if pacman -Qi $pkg &> /dev/null; then
         tput setaf 1
         echo "#################################################################"
-        echo "######### $pkg in pkg.txt already installed. "
+        echo "######### $pkg in x86_64.txt already installed. "
         echo "#################################################################"
         echo
         tput sgr0
     else
         tput setaf 3
         echo "#################################################################"
-        echo "######### $pkg in pkg.txt is being installed. "
+        echo "######### $pkg in x86_64.txt is being installed. "
         echo "#################################################################"
         sudo pacman -S --noconfirm --needed $pkg
         echo
