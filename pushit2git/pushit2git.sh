@@ -22,26 +22,24 @@
 echo "####################################"
 echo "#### Checking for updated files "
 echo "####################################"
-git pull 
-
-
+git pull
 
 git add .
 sleep 3
 git status 
 
 echo "####################################################" 
-echo "##### Adding files to resprotory make your commit "
+echo "##### Adding files to repo make your commit "
 echo "####################################################"
 
 read input
 git commit -m "$input"
 
 echo "####################################################"
-echo "######### Finishing up all done "
+echo "######### Finishing up almost done "
 echo "####################################################"
 
-git push
+git push -u origin master
 
 
 
