@@ -1,10 +1,10 @@
 #!/usr/bin/env bash 
 #set -e
-##################################################################################################################
+##################################################################################################################################
 # Author    : ArchNoob 
 # Website   : https://www.github.com/ArchN00b
 ##################################################################################################################################
-### ITS ALL IN YOUR HANDS. PLEASE READ SCRIPT SO YOU KNOW WHATS BEING INSTALLED. REBOOTTING AFTER INSTALL        #
+### ITS ALL IN YOUR HANDS. PLEASE READ SCRIPT SO YOU KNOW WHATS BEING INSTALLED. REBOOTTING AFTER INSTALL                        #
 ##################################################################################################################################
 #tput setaf 0 = black
 #tput setaf 1 = red
@@ -72,7 +72,7 @@ printf "%s\n" "Enabling and configuring ${bold}SDDM ${normal}as the login manage
     sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf && \
     [ -d "/etc/sddm.conf.d/" ] || sudo mkdir -p /etc/sddm.conf.d/ && \
     [ -f "/usr/lib/sddm/sddm.conf.d/archnoobtheme.conf" ] && \
-    sudo mv /usr/lib/sddm/sddm.conf.d/archnoob-theme.conf /etc/sddm.conf.d/ && \
+    sudo mv /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf /etc/sddm.conf.d/ && \
     sudo sed -i 's/^Current=*.*/Current=archnoobtheme/g' /etc/sddm.conf.d/archnoobtheme.conf
 
 echo "#########################################"
