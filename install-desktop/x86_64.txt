@@ -1,8 +1,7 @@
-sddm
-qt5-quickcontrols2
-archnoob-theme
 alacritty
 archnoob-alacritty
-starship
 archnoob-starship
-Magna-Dark-Icons
+archnoob-theme
+qt5-quickcontrols2
+sddm
+starship
