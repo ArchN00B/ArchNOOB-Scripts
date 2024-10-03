@@ -4,7 +4,7 @@
 # Author    : ArchNoob 
 # Website   : https://www.github.com/ArchN00b
 ##################################################################################################################
-
+### ITS ALL IN YOUR HANDS. PLEASE READ SCRIPT SO YOU KNOW WHATS BEING INSTALLED. REBOOT AFTER INSTALL            #
 ##################################################################################################################
 #tput setaf 0 = black
 #tput setaf 1 = red
@@ -93,10 +93,31 @@ printf "%s\n" " Installing Starship."
 echo '
 #including starship
 eval "$(starship init bash)" ' >> ~/.bashrc && source ~/.bashrc
+sleep 3
+
+# INSTALLING ICON THEME
+git clone https://github.com/L4ki/Magna-Plasma-Themes.git
+sudo mv Magna-Plasma-Themes/'Magna Icons Themes'/Magna-Dark-Icons /usr/share/icons/
+sudo rm -rf Magna-Plasma-Themes
+sleep 1
+
+# USING XFCONF-QUERY TO ADJUST DEFAULT THEME
+icon=/Net/IconThemeName
+iconname="Magna-Dark-Icons"                                
+
+xfconf-query -c xsettings -p $icon -s $iconname
+
+# CHANGING THE DEFAULT THEME ON XFCE4 USING XFCONF-QUERY
+theme=/Net/ThemeName
+themename="Adwaita-dark"                  
+
+xfconf-query -c xsettings -p $theme -s $themename
 
 echo "##########################################"
-echo "##### INSTALLATION DONE REBOOT  "
+echo "##### INSTALLATION DONE REBOOTING "
 echo "##########################################"
+sleep 5
+reboot 
 
 
 
