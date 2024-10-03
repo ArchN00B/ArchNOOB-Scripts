@@ -75,13 +75,13 @@ printf "%s\n" "Enabling and configuring ${bold}SDDM ${normal}as the login manage
     sudo mv /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf /etc/sddm.conf.d/ && \
     sudo sed -i 's/^Current=*.*/Current=archnoobtheme/g' /etc/sddm.conf.d/archnoobtheme.conf
 
-echo "#########################################"
+echo "#####################################"
 echo "####### SDDM HAS BEEN INSTALLED "
-echo "#########################################"
+echo "#####################################"
 
 # INSTALL ALACRITTY TERMINAL WITH THEME
-[ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacrity/ && \
-[ -d $HOME/.conf/alacritty/ ] && sudo cp -r /etc/skel/.config/alacritty/alacritty.toml $HOME/.config/alacritty/
+[ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacritty/ && \
+[ -d $HOME/.config/alacritty/ ] && sudo cp -r /etc/skel/.config/alacritty/alacritty.toml $HOME/.config/alacritty/
 
 # INSTALLING STARSHIP
 
@@ -114,6 +114,7 @@ themename="Adwaita-dark"
 xfconf-query -c xsettings -p $theme -s $themename
 
 # REMOVING DESKTOP ICONS WHO NEEDS THEM LOL 
+xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
 
 
 echo "##########################################"
