@@ -1,11 +1,11 @@
 #!/usr/bin/env bash 
 #set -e
-##################################################################################################################################
+##################################################################################################################
 # Author    : ArchNoob 
 # Website   : https://www.github.com/ArchN00b
-##################################################################################################################################
-### ITS ALL IN YOUR HANDS. PLEASE READ SCRIPT SO YOU KNOW WHATS BEING INSTALLED. REBOOTTING AFTER INSTALL                        #
-##################################################################################################################################
+##################################################################################################################
+### ITS ALL IN YOUR HANDS. PLEASE READ SCRIPT SO YOU KNOW WHATS BEING INSTALLED. REBOOT AFTER INSTALL            #
+##################################################################################################################
 #tput setaf 0 = black
 #tput setaf 1 = red
 #tput setaf 2 = green
@@ -73,15 +73,15 @@ printf "%s\n" "Enabling and configuring ${bold}SDDM ${normal}as the login manage
     [ -d "/etc/sddm.conf.d/" ] || sudo mkdir -p /etc/sddm.conf.d/ && \
     [ -f "/usr/lib/sddm/sddm.conf.d/archnoobtheme.conf" ] && \
     sudo mv /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf /etc/sddm.conf.d/ && \
-    sudo sed -i 's/^Current=*.*/Current=archnoobtheme/g' /etc/sddm.conf.d/archnoobtheme.conf
+    sudo sed -i 's/^Current=*.*/Current=archnoob-theme/g' /etc/sddm.conf.d/archnoobtheme.conf
 
-echo "#####################################"
+echo "#########################################"
 echo "####### SDDM HAS BEEN INSTALLED "
-echo "#####################################"
+echo "#########################################"
 
 # INSTALL ALACRITTY TERMINAL WITH THEME
-[ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacritty/ && \
-[ -d $HOME/.config/alacritty/ ] && sudo cp -r /etc/skel/.config/alacritty/alacritty.toml $HOME/.config/alacritty/
+[ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacrity/ && \
+[ -d $HOME/.conf/alacritty/ ] && sudo cp -r /etc/skel/.config/alacritty/alacritty.toml $HOME/.config/alacritty/
 
 # INSTALLING STARSHIP
 
@@ -113,14 +113,25 @@ themename="Adwaita-dark"
 
 xfconf-query -c xsettings -p $theme -s $themename
 
-# REMOVING DESKTOP ICONS WHO NEEDS THEM LOL 
-xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
+# SETTING DEFAULT BACKGROUND
+git clone https://github.com/archn00b/wallpapers.git
+rm -rf wallpapers/.git
+rm -rf wallpapers/pushit2git.sh
+cp -r wallpapers/* /usr/share/backgrounds/xfce/
+rm -rf wallpapers
+# CHANNEL THAT NEEDS TO BE CHANGED
+bgpath=/backdrop/screen0/monitorDP-4/workspace0/last-image
 
+# PATH TO BACKGROUND IMAGE 
+bg=/usr/share/backgrounds/xfce/bg3.jpg
+
+# COMMAND TO SET BACKGROUND
+xfconf-query -c xfce4-desktop -p $bgpath -s $bg 
 
 echo "##########################################"
 echo "##### INSTALLATION DONE REBOOTING "
 echo "##########################################"
-sleep 3
+sleep 5
 reboot 
 
 
