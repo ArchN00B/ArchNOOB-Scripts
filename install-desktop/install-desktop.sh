@@ -59,6 +59,9 @@ do
     fi
 done
 
+# INSTALLING SDDM AND DEPENDICIES 
+sudo pacman -S sddm qt5-quickcontrols2 archnoob-sddm-theme
+
 # MAKING SDDM DEFAULT DISPLAY MANAGER
 # Disable the current login manager
 sudo systemctl disable "$(grep '/usr/s\?bin' /etc/systemd/system/display-manager.service | awk -F / '{print $NF}')" || echo "Cannot disable current display manager."
@@ -73,11 +76,11 @@ printf "%s\n" "Enabling and configuring ${bold}SDDM ${normal}as the login manage
     [ -d "/etc/sddm.conf.d/" ] || sudo mkdir -p /etc/sddm.conf.d/ && \
     [ -f "/usr/lib/sddm/sddm.conf.d/archnoobtheme.conf" ] && \
     sudo mv /usr/lib/sddm/sddm.conf.d/archnoobtheme.conf /etc/sddm.conf.d/ && \
-    sudo sed -i 's/^Current=*.*/Current=archnoob-theme/g' /etc/sddm.conf.d/archnoobtheme.conf
+    sudo sed -i 's/^Current=*.*/Current=archnoobtheme/g' /etc/sddm.conf.d/archnoobtheme.conf
 
-echo "#########################################"
+echo "#####################################"
 echo "####### SDDM HAS BEEN INSTALLED "
-echo "#########################################"
+echo "#####################################"
 
 # INSTALL ALACRITTY TERMINAL WITH THEME
 [ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacrity/ && \
