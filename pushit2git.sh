@@ -32,9 +32,7 @@ sleep 2
 git status
 
 # Printing to the screen with color
-printf "\033[34m######################################################\n"
 printf "%s\033[34mADDING EDITED FILES TO REPO MAKE YOUR COMMIT\033[m\n"
-printf "&s\033[34m######################################################\n"
 
 # Read user input very important to add commit or it failed to add edited files to repo
 read input
