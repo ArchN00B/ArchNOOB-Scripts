@@ -19,7 +19,7 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 
-printf "%s\033[34mChecking for updated files on the repo\n"
+printf "%s\033[34mChecking for updated files on the repo\033[m\n"
 git pull
 git add .
 sleep 3
