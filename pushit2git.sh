@@ -19,7 +19,7 @@
 ####################################################################################################################################################
 
 # printing to the screen using color
-printf "%s\033[34mChECKING FOR UPDATED FILES ONE REPO\033[m\n"
+printf "%s\033[34mCHECKING FOR UPDATED FILES ONE REPO\033[m\n"
 
 # Checking for updated files on repo
 git pull
@@ -32,7 +32,9 @@ sleep 2
 git status
 
 # Printing to the screen with color
+echo "###################################################################"
 printf "%s\033[34mADDING EDITED FILES TO REPO MAKE YOUR COMMIT\033[m\n"
+echo "###################################################################"
 
 # Read user input very important to add commit or it failed to add edited files to repo
 read input
