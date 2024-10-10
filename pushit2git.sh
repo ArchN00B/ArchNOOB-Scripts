@@ -26,7 +26,7 @@ git pull
 
 # Adding edited files to repo . means pwd
 git add .
-sleep 1
+sleep 2
 
 # Checking the status of edited files
 git status
