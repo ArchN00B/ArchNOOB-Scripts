@@ -19,9 +19,8 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 
-echo "####################################"
-echo "#### Checking for updated files "
-echo "####################################"
+printf "%s/033[34m Checking for updates files on repo"
+
 git pull
 
 git add .
