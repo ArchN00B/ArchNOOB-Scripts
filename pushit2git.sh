@@ -24,10 +24,10 @@ git pull
 git add .
 sleep 3
 git status
-printf "%s\033[34mAdding files to repo add your commit\n"
+printf "%s\033[34mAdding files to repo add your commit\033[m\n"
 read input
 git commit -m "$input"
-printf "%s\033[34mFinishing up almost done\n"
+printf "%s\033[34mFinishing up almost done\033[m\n"
 git push -u origin master
 
 
