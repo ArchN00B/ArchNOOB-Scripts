@@ -28,12 +28,12 @@ sleep 3
 git status
 
 printf "%s\033[34m Adding files to repo add your commit\n"
+echo $USER && read input
 
-read input
 git commit -m "$input"
 
 printf "%s\033[34m Finishing up almost done\n"
-echo $USER
+
 
 git push -u origin master
 
