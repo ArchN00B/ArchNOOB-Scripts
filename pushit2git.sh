@@ -19,15 +19,15 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 
-printf "%s\033[34mChecking for updated files on the repo\033[m\n"
+printf "%s\033[34mChecking FOR UPDATED FILES ONE REPO\033[m\n"
 git pull
 git add .
 sleep 3
 git status
-printf "%s\033[34mAdding files to repo add your commit\033[m\n"
+printf "%s\033[34mADDING EDITED FILES TO REPO MAKE YOUR COMMIT\033[m\n"
 read input
 git commit -m "$input"
-printf "%s\033[34mFinishing up almost done\033[m\n"
+printf "%s\033[34mFINISHING UP ALMOST DONE\033[m\n"
 git push -u origin master
 
 
