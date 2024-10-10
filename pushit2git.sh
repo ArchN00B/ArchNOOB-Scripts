@@ -25,18 +25,14 @@ git pull
 
 git add .
 sleep 3
-git status 
+git status
 
-echo "####################################################" 
-echo "##### Adding files to repo make your commit "
-echo "####################################################"
+printf "%s\033[34m Adding files to repo add your commit"
 
 read input
 git commit -m "$input"
 
-echo "####################################################"
-echo "######### Finishing up almost done "
-echo "####################################################"
+printf "%s\033[34m Finishing up almost done"
 
 git push -u origin master
 
