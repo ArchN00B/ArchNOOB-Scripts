@@ -4,7 +4,7 @@
 # Author    : ArchNoob 
 # Website   : https://www.github.com/ArchN00b
 ##################################################################################################################
-
+# ITS ALL IN YOUR HANDS. READ SCRIPT & OBSERVE. 
 ##################################################################################################################
 #tput setaf 0 = black
 #tput setaf 1 = red
@@ -25,16 +25,17 @@ bolderror=$(tput setaf 3 bold) # makes text bold and sets color to 3
 normal=$(tput sgr0)            # resets text settings back to normal
 
 # ADDING ARCHN00B CORE-REPO TO /ETC/PACMAN.CONF
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
-addrepo() { \
-    printf "%s\n" "## Adding repositories to /etc/pacman.conf."
-
+addrepo() { \ 
     # Adding Archn00B core-repo to pacman.conf
-    printf "%s" "Adding repo " && printf "%s" "${bold}[core-repo] " && printf "%s\n" "${normal}to /etc/pacman.conf."
+    printf "%s\033[34m Adding [core-repo] to /etc/pacman.conf"
     grep -qxF "[core-repo]" /etc/pacman.conf ||
         ( echo " "; echo "[core-repo]"; echo "SigLevel = Optional TrustAll"; \
         echo "Server = https://archn00b.github.io/\$repo/\$arch") | sudo tee -a /etc/pacman.conf
 }
 
 addrepo || error "Error adding ArchN00B repo to /etc/pacman.conf."
+
+# SYNCING THE REPOSITORIES
+sudo pacman -Syy --noconfirm
