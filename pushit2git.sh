@@ -33,6 +33,7 @@ read input
 git commit -m "$input"
 
 printf "%s\033[34m Finishing up almost done\n"
+echo $USER
 
 git push -u origin master
 
